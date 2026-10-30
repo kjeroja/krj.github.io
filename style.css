@@ -1341,7 +1341,8 @@ h1.section-main,
   flex-direction: row;
   align-items: baseline;
   justify-content: center;
-  gap: 0.7em;
+  flex-wrap: wrap; /* falls back to two lines if the screen is too narrow */
+  gap: 0.5em 0.7em;
 }
 
 .gate__label,
@@ -1350,8 +1351,8 @@ h1.section-main,
 }
 
 .gate--one-line .gate__label {
-  font-size: 0.56rem;
-  letter-spacing: 0.18em;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
   padding-left: 0;
 }
 
@@ -1369,12 +1370,12 @@ h1.section-main,
 }
 
 .gate--one-line .countdown__num {
-  font-size: 0.88rem;
+  font-size: 1rem;
 }
 
 .gate--one-line .countdown__lbl {
-  font-size: 0.46rem;
-  letter-spacing: 0.1em;
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
 }
 
 @media (min-width: 700px) {
