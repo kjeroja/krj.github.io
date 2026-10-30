@@ -76,12 +76,11 @@
     tick();
     var timer = setInterval(tick, 250);
 
-    // Phones: make the count-up line exactly as wide as "Kirsika & Kjell"
+    // Make the count-up line exactly as wide as "Kirsika & Kjell"
     function fitCount() {
       var row = document.querySelector('.gate__since');
       var names = document.querySelector('.gate__names');
       row.style.fontSize = '';
-      if (window.innerWidth >= 700) return;
       var range = document.createRange();
       range.selectNodeContents(names);
       var target = range.getBoundingClientRect().width;
