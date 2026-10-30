@@ -1584,10 +1584,10 @@ h1.section-main,
   }
 }
 
-/* Computers: schedule tab is left-aligned, column starts at about 1/3 of the page */
+/* Computers: schedule tab is left-aligned, column starts at about 1/5 of the page */
 @media (min-width: 900px) {
   .view--schedule {
-    padding-left: 33.333vw;
+    padding-left: 20vw;
     padding-right: 48px;
   }
 
