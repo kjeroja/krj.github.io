@@ -1428,3 +1428,151 @@ h1.section-main,
     letter-spacing: 0.2em;
   }
 }
+
+/* ======================= Inside page (after password) ======================= */
+
+.site {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 56px;
+  padding: 0 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-tabs {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.site-tabs a,
+.site .lang-switch a {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease;
+}
+
+.site-tabs a:hover,
+.site .lang-switch a:hover {
+  color: var(--color-ink);
+}
+
+.site-tabs a[aria-current],
+.site .lang-switch a[aria-current] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
+}
+
+.site .lang-switch {
+  position: static;
+  gap: 0.8rem;
+}
+
+/* Photos tab: fills the screen below the tabs, everything centered */
+.view--photos {
+  min-height: calc(100vh - 56px);
+  min-height: calc(100dvh - 56px);
+  padding: 24px 16px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand-mark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(5.5rem, 30vw, 8rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.brand-mark--small {
+  font-size: 3.6rem;
+}
+
+.brand-names {
+  margin-top: 1.3rem;
+  font-size: clamp(0.95rem, 4.4vw, 1.1rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.brand-mark--small + .brand-names {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.view--photos .photos-cta {
+  margin-top: 3.2rem;
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.view--photos .photos-cta:hover,
+.view--photos .photos-cta:focus-visible {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.guest-link {
+  margin-top: 1.3rem;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--color-ink-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.guest-link:hover {
+  color: var(--color-ink);
+}
+
+/* Schedule tab: one centered column under the small K² */
+.view--schedule {
+  padding: 40px 16px 96px;
+}
+
+.view-brand {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.schedule-view {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .site-nav {
+    padding: 0 32px;
+  }
+
+  .brand-mark {
+    font-size: 8rem;
+  }
+
+  .brand-mark--small {
+    font-size: 3.6rem;
+  }
+}
