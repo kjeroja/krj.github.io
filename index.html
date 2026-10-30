@@ -40,10 +40,6 @@
             <span class="countdown__num" data-unit="m">--</span>
             <span class="countdown__lbl">minutit</span>
           </div>
-          <div class="countdown__cell">
-            <span class="countdown__num" data-unit="s">--</span>
-            <span class="countdown__lbl">sekundit</span>
-          </div>
       </div>
     </div>
     <button class="gate__btn" id="gate-enter" type="button">Sisene</button>
@@ -69,14 +65,13 @@
     var clock = document.querySelector('.gate .countdown');
     var since = new Date(clock.getAttribute('data-since')).getTime();
     var cells = {};
-    'dhms'.split('').forEach(function (u) { cells[u] = clock.querySelector('[data-unit="' + u + '"]'); });
+    'dhm'.split('').forEach(function (u) { cells[u] = clock.querySelector('[data-unit="' + u + '"]'); });
     function pad(n) { return n < 10 ? '0' + n : String(n); }
     function tick() {
       var t = Math.max(0, Date.now() - since);
       cells.d.textContent = pad(Math.floor(t / 86400000));
       cells.h.textContent = pad(Math.floor(t / 3600000) % 24);
       cells.m.textContent = pad(Math.floor(t / 60000) % 60);
-      cells.s.textContent = pad(Math.floor(t / 1000) % 60);
     }
     tick();
     var timer = setInterval(tick, 250);
