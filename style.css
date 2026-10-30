@@ -1154,23 +1154,24 @@ h1.section-main,
   padding-left: 0.28em; /* balances the letter-spacing so it centers */
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  font-size: 0.78rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
 
 .gate .countdown {
   margin: 0;
-  gap: clamp(0.9rem, 4vw, 1.6rem);
+  gap: 0.9rem;
 }
 
 .gate .countdown__num {
   color: #fff;
-  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  font-size: 1.3rem;
 }
 
 .gate .countdown__lbl {
   color: rgba(255, 255, 255, 0.75);
+  font-size: 0.52rem;
 }
 
 .gate__btn {
@@ -1307,21 +1308,122 @@ h1.section-main,
 
 /* K² logo on the start screen (same look as the page header) */
 .gate__brand {
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 
 .gate__logo {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 14vw, 5rem);
+  font-size: clamp(5.5rem, 30vw, 8rem);
   font-weight: 500;
   letter-spacing: 0.05em;
   line-height: 1;
 }
 
 .gate__names {
-  margin-top: 1.1rem;
+  margin-top: 1.4rem;
   letter-spacing: 0.32em;
-  font-size: clamp(0.78rem, 2.4vw, 0.95rem);
+  font-size: clamp(0.95rem, 4.4vw, 1.15rem);
   text-transform: uppercase;
+}
+
+/* "Abielus juba" sits right above its numbers */
+.gate__since {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* One-line version: label and time side by side, units after each number.
+   Used on computers; on phones only when the gate has .gate--one-line. */
+.gate--one-line .gate__since {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.7em;
+}
+
+.gate__label,
+.gate .countdown__cell {
+  white-space: nowrap;
+}
+
+.gate--one-line .gate__label {
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  padding-left: 0;
+}
+
+.gate--one-line .countdown {
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
+.gate--one-line .countdown__cell {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.25em;
+  min-width: 0;
+}
+
+.gate--one-line .countdown__num {
+  font-size: 0.88rem;
+}
+
+.gate--one-line .countdown__lbl {
+  font-size: 0.46rem;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 700px) {
+  .gate__inner {
+    max-width: none;
+  }
+
+  .gate__logo {
+    font-size: 5.5rem;
+  }
+
+  .gate__names {
+    font-size: 0.95rem;
+  }
+
+  .gate__since {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+
+  .gate__label,
+  .gate--one-line .gate__label {
+    font-size: 0.95rem;
+    letter-spacing: 0.28em;
+  }
+
+  .gate .countdown {
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 1.1rem;
+  }
+
+  .gate .countdown__cell {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .gate .countdown__num,
+  .gate--one-line .countdown__num {
+    font-size: 1.5rem;
+  }
+
+  .gate .countdown__lbl,
+  .gate--one-line .countdown__lbl {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+  }
 }
