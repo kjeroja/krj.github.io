@@ -1108,3 +1108,478 @@ h1.section-main,
     column-gap: 96px;
   }
 }
+
+/* ============================ Password gate ============================ */
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.gate {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px 16px;
+  background-color: #7e8269;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gate__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.gate__label {
+  margin: 0;
+  padding-left: 0.28em; /* balances the letter-spacing so it centers */
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.gate .countdown {
+  margin: 0;
+  gap: 0.9rem;
+}
+
+.gate .countdown__num {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.gate .countdown__lbl {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.52rem;
+}
+
+.gate__btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  padding: 0.95rem 2.6rem 0.95rem 2.92rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.gate__btn:hover,
+.gate__btn:focus-visible {
+  background: #fff;
+  color: #4f523f;
+  outline: none;
+}
+
+.gate__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.gate__form input {
+  width: 100%;
+  max-width: 15rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  outline: none;
+}
+
+.gate__form input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.gate__error {
+  min-height: 1.7em;
+  font-style: italic;
+}
+
+/* ET / EN switch, top-right of the gate and the page header */
+.lang-switch {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.lang-switch a {
+  padding: 0.3rem 0.4rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lang-switch a:hover {
+  color: #fff;
+}
+
+.lang-switch a[aria-current] {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/* After the gate: shorter header on phones, so the thank-you shows sooner */
+@media (max-width: 899px) {
+  .page .hero {
+    min-height: 55vh;
+    min-height: 55dvh;
+  }
+}
+
+/* ============================== Thank you ============================== */
+
+.thanks-section {
+  text-align: center;
+}
+
+.thanks-section .thanks-title {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.thanks-message {
+  margin: 1.2rem auto 0;
+  max-width: 28rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.photos-cta {
+  display: inline-block;
+  margin-top: 2.2rem;
+  padding: 1rem 2rem 1rem 2.28rem;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.photos-cta:hover,
+.photos-cta:focus-visible {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.closing-section .closing-signature:first-child {
+  margin-top: 0;
+}
+
+/* K² logo on the start screen (same look as the page header) */
+.gate__brand {
+  margin-bottom: 0.4rem;
+}
+
+.gate__logo {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(5.5rem, 30vw, 8rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.gate__names {
+  margin-top: 1.4rem;
+  letter-spacing: 0.32em;
+  font-size: clamp(0.95rem, 4.4vw, 1.15rem);
+  text-transform: uppercase;
+}
+
+/* "Abielus juba" sits right above its numbers */
+.gate__since {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* One-line version: label and time side by side, units after each number.
+   Used on computers; on phones only when the gate has .gate--one-line. */
+.gate--one-line .gate__since {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap; /* falls back to two lines if the screen is too narrow */
+  gap: 0.5em 0.7em;
+}
+
+.gate__label,
+.gate .countdown__cell {
+  white-space: nowrap;
+}
+
+.gate--one-line .gate__label {
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  padding-left: 0;
+}
+
+.gate--one-line .countdown {
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
+.gate--one-line .countdown__cell {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.25em;
+  min-width: 0;
+}
+
+.gate--one-line .countdown__num {
+  font-size: 1rem;
+}
+
+.gate--one-line .countdown__lbl {
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+}
+
+@media (min-width: 700px) {
+  .gate__inner {
+    max-width: none;
+  }
+
+  .gate__logo {
+    font-size: 5.5rem;
+  }
+
+  .gate__names {
+    font-size: 0.95rem;
+  }
+
+  .gate__since {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+
+  .gate__label,
+  .gate--one-line .gate__label {
+    font-size: 0.95rem;
+    letter-spacing: 0.28em;
+  }
+
+  .gate .countdown {
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 1.1rem;
+  }
+
+  .gate .countdown__cell {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .gate .countdown__num,
+  .gate--one-line .countdown__num {
+    font-size: 1.5rem;
+  }
+
+  .gate .countdown__lbl,
+  .gate--one-line .countdown__lbl {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+/* ======================= Inside page (after password) ======================= */
+
+.site {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 56px;
+  padding: 0 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-tabs {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.site-tabs a,
+.site .lang-switch a {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease;
+}
+
+.site-tabs a:hover,
+.site .lang-switch a:hover {
+  color: var(--color-ink);
+}
+
+.site-tabs a[aria-current],
+.site .lang-switch a[aria-current] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
+}
+
+.site .lang-switch {
+  position: static;
+  gap: 0.8rem;
+}
+
+/* Photos tab: fills the screen below the tabs, everything centered */
+.view--photos {
+  min-height: calc(100vh - 56px);
+  min-height: calc(100dvh - 56px);
+  padding: 24px 16px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand-mark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(5.5rem, 30vw, 8rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.brand-mark--small {
+  font-size: 3.6rem;
+}
+
+.brand-names {
+  margin-top: 1.3rem;
+  font-size: clamp(0.95rem, 4.4vw, 1.1rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.brand-mark--small + .brand-names {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.view--photos .photos-cta {
+  margin-top: 3.2rem;
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.view--photos .photos-cta:hover,
+.view--photos .photos-cta:focus-visible {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.guest-link {
+  margin-top: 1.3rem;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--color-ink-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.guest-link:hover {
+  color: var(--color-ink);
+}
+
+/* Schedule tab: one centered column under the small K² */
+.view--schedule {
+  padding: 40px 16px 96px;
+}
+
+.view-brand {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.schedule-view {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .site-nav {
+    padding: 0 32px;
+  }
+
+  .brand-mark {
+    font-size: 8rem;
+  }
+
+  .brand-mark--small {
+    font-size: 3.6rem;
+  }
+}
+
+/* Phones: FOTOD, PULMAPÄEV and ET/EN spread evenly across the top bar */
+@media (max-width: 699px) {
+  .site-tabs {
+    display: contents;
+  }
+}
