@@ -76,6 +76,28 @@
     tick();
     var timer = setInterval(tick, 250);
 
+    // Phones: make the count-up line exactly as wide as "Kirsika & Kjell"
+    function fitCount() {
+      var row = document.querySelector('.gate__since');
+      var names = document.querySelector('.gate__names');
+      row.style.fontSize = '';
+      if (window.innerWidth >= 700) return;
+      var range = document.createRange();
+      range.selectNodeContents(names);
+      var target = range.getBoundingClientRect().width;
+      var left = Infinity, right = -Infinity;
+      row.querySelectorAll('.gate__label, .countdown__cell').forEach(function (el) {
+        var b = el.getBoundingClientRect();
+        left = Math.min(left, b.left);
+        right = Math.max(right, b.right);
+      });
+      var base = parseFloat(getComputedStyle(row).fontSize);
+      if (right > left) row.style.fontSize = (base * target / (right - left)) + 'px';
+    }
+    fitCount();
+    window.addEventListener('resize', fitCount);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitCount);
+
     // Fade sections in as they scroll into view
     function initReveal() {
       var els = document.querySelectorAll('[data-reveal]');

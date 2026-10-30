@@ -1351,7 +1351,7 @@ h1.section-main,
 }
 
 .gate--one-line .gate__label {
-  font-size: 0.66rem;
+  font-size: 0.66em;
   letter-spacing: 0.2em;
   padding-left: 0;
 }
@@ -1370,11 +1370,11 @@ h1.section-main,
 }
 
 .gate--one-line .countdown__num {
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 .gate--one-line .countdown__lbl {
-  font-size: 0.5rem;
+  font-size: 0.5em;
   letter-spacing: 0.12em;
 }
 
@@ -1615,5 +1615,13 @@ h1.section-main,
   /* the rings drawing has empty space on its left; pull it in line with the text */
   .view--schedule .rings-icon {
     margin-left: -10px;
+  }
+}
+
+/* Phones: count-up sits right below "Kirsika & Kjell".
+   Its size is set by script to match the width of the names. */
+@media (max-width: 699px) {
+  .gate__brand {
+    margin-bottom: -1.3rem;
   }
 }
