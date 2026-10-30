@@ -1351,7 +1351,7 @@ h1.section-main,
 }
 
 .gate--one-line .gate__label {
-  font-size: 0.66rem;
+  font-size: 0.66em;
   letter-spacing: 0.2em;
   padding-left: 0;
 }
@@ -1370,11 +1370,11 @@ h1.section-main,
 }
 
 .gate--one-line .countdown__num {
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 .gate--one-line .countdown__lbl {
-  font-size: 0.5rem;
+  font-size: 0.5em;
   letter-spacing: 0.12em;
 }
 
@@ -1383,50 +1383,6 @@ h1.section-main,
     max-width: none;
   }
 
-  .gate__logo {
-    font-size: 5.5rem;
-  }
-
-  .gate__names {
-    font-size: 0.95rem;
-  }
-
-  .gate__since {
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-    gap: 1.6rem;
-  }
-
-  .gate__label,
-  .gate--one-line .gate__label {
-    font-size: 0.95rem;
-    letter-spacing: 0.28em;
-  }
-
-  .gate .countdown {
-    flex-wrap: nowrap;
-    align-items: baseline;
-    gap: 1.1rem;
-  }
-
-  .gate .countdown__cell {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0.4rem;
-    min-width: 0;
-  }
-
-  .gate .countdown__num,
-  .gate--one-line .countdown__num {
-    font-size: 1.5rem;
-  }
-
-  .gate .countdown__lbl,
-  .gate--one-line .countdown__lbl {
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-  }
 }
 
 /* ======================= Inside page (after password) ======================= */
@@ -1582,4 +1538,44 @@ h1.section-main,
   .site-tabs {
     display: contents;
   }
+}
+
+/* Computers: schedule tab is left-aligned, column starts at about 1/5 of the page */
+@media (min-width: 900px) {
+  .view--schedule {
+    padding-left: 20vw;
+    padding-right: 48px;
+  }
+
+  .view--schedule .view-brand,
+  .view--schedule .schedule-date,
+  .view--schedule .schedule-item__time,
+  .view--schedule .schedule-item__text,
+  .view--schedule .schedule-field,
+  .view--schedule .schedule-field dt,
+  .view--schedule .schedule-field dd,
+  .view--schedule .ornament-divider {
+    text-align: left;
+  }
+
+  .view--schedule .schedule-view {
+    max-width: 34rem;
+    margin: 0;
+  }
+
+  .view--schedule .schedule-icon-stack,
+  .view--schedule .schedule-item,
+  .view--schedule .schedule-field {
+    align-items: flex-start;
+  }
+  /* the rings drawing has empty space on its left; pull it in line with the text */
+  .view--schedule .rings-icon {
+    margin-left: -10px;
+  }
+}
+
+/* Count-up sits right below "Kirsika & Kjell".
+   Its size is set by script to match the width of the names. */
+.gate__brand {
+  margin-bottom: -1.3rem;
 }
