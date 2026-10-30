@@ -1576,3 +1576,10 @@ h1.section-main,
     font-size: 3.6rem;
   }
 }
+
+/* Phones: FOTOD, PULMAPÄEV and ET/EN spread evenly across the top bar */
+@media (max-width: 699px) {
+  .site-tabs {
+    display: contents;
+  }
+}
