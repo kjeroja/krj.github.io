@@ -1583,3 +1583,37 @@ h1.section-main,
     display: contents;
   }
 }
+
+/* Computers: schedule tab is left-aligned, column starts at about 1/3 of the page */
+@media (min-width: 900px) {
+  .view--schedule {
+    padding-left: 33.333vw;
+    padding-right: 48px;
+  }
+
+  .view--schedule .view-brand,
+  .view--schedule .schedule-date,
+  .view--schedule .schedule-item__time,
+  .view--schedule .schedule-item__text,
+  .view--schedule .schedule-field,
+  .view--schedule .schedule-field dt,
+  .view--schedule .schedule-field dd,
+  .view--schedule .ornament-divider {
+    text-align: left;
+  }
+
+  .view--schedule .schedule-view {
+    max-width: 34rem;
+    margin: 0;
+  }
+
+  .view--schedule .schedule-icon-stack,
+  .view--schedule .schedule-item,
+  .view--schedule .schedule-field {
+    align-items: flex-start;
+  }
+  /* the rings drawing has empty space on its left; pull it in line with the text */
+  .view--schedule .rings-icon {
+    margin-left: -10px;
+  }
+}
