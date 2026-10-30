@@ -1108,3 +1108,199 @@ h1.section-main,
     column-gap: 96px;
   }
 }
+
+/* ============================ Password gate ============================ */
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.gate {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px 16px;
+  background-color: #7e8269;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gate__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.gate__label {
+  margin: 0;
+  padding-left: 0.28em; /* balances the letter-spacing so it centers */
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.gate .countdown {
+  margin: 0;
+  gap: clamp(0.9rem, 4vw, 1.6rem);
+}
+
+.gate .countdown__num {
+  color: #fff;
+  font-size: clamp(1.8rem, 8vw, 2.6rem);
+}
+
+.gate .countdown__lbl {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.gate__btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  padding: 0.95rem 2.6rem 0.95rem 2.92rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.gate__btn:hover,
+.gate__btn:focus-visible {
+  background: #fff;
+  color: #4f523f;
+  outline: none;
+}
+
+.gate__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.gate__form input {
+  width: 100%;
+  max-width: 15rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  outline: none;
+}
+
+.gate__form input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.gate__error {
+  min-height: 1.7em;
+  font-style: italic;
+}
+
+/* ET / EN switch, top-right of the gate and the page header */
+.lang-switch {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.lang-switch a {
+  padding: 0.3rem 0.4rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lang-switch a:hover {
+  color: #fff;
+}
+
+.lang-switch a[aria-current] {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/* After the gate: shorter header on phones, so the thank-you shows sooner */
+@media (max-width: 899px) {
+  .page .hero {
+    min-height: 55vh;
+    min-height: 55dvh;
+  }
+}
+
+/* ============================== Thank you ============================== */
+
+.thanks-section {
+  text-align: center;
+}
+
+.thanks-section .thanks-title {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.thanks-message {
+  margin: 1.2rem auto 0;
+  max-width: 28rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.photos-cta {
+  display: inline-block;
+  margin-top: 2.2rem;
+  padding: 1rem 2rem 1rem 2.28rem;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.photos-cta:hover,
+.photos-cta:focus-visible {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.closing-section .closing-signature:first-child {
+  margin-top: 0;
+}
